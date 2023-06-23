@@ -35,19 +35,16 @@ def generate_galaxies(num_galaxies, cluster_size=100, void_size=1000):
 
         # Assign specific colors to each galaxy
         brightness = np.random.uniform(0.5, 1.0)  # generate random brightness
-        if i % 10 == 0:
+        if i % 10 == 0 or i % 10 == 1:
             galaxies[i, 3:6] = np.array([1.0, 1.0, 1.0], dtype=np.float32) * brightness  # White
-        elif i % 10 == 1:
+        elif i % 10 == 2 or i % 10 == 3 or i % 10 == 4:
             galaxies[i, 3:6] = np.array([0.5, 0.5, 0.5], dtype=np.float32) * brightness  # Gray
-        elif i % 10 == 2:
+        elif i % 10 == 5:
             galaxies[i, 3:6] = np.array([0.98, 0.0, 0.603], dtype=np.float32) * brightness  # Pink
-        else:
+        elif i % 10 == 6:
             galaxies[i, 3:6] = np.array([0.54, 0.81, 0.94], dtype=np.float32) * brightness  # Baby blue
 
     return galaxies
-
-
-
 
 def create_vbo(galaxies):
     vbo_id = glGenBuffers(1)
@@ -120,5 +117,5 @@ def main(num_galaxies):
         clock.tick(60)  # Limit frame rate to 60 FPS
 
 if __name__ == '__main__':
-    num_galaxies = 100000  # Set the number of galaxies here
+    num_galaxies = 200000  # Set the number of galaxies here
     main(num_galaxies)

@@ -35,16 +35,17 @@ def generate_galaxies(num_galaxies, cluster_size=100, void_size=1000):
 
         # Assign specific colors to each galaxy
         brightness = np.random.uniform(0.5, 1.0)  # generate random brightness
-        if i % 4 == 0:
+        if i % 10 == 0:
             galaxies[i, 3:6] = np.array([1.0, 1.0, 1.0], dtype=np.float32) * brightness  # White
-        elif i % 4 == 1:
+        elif i % 10 == 1:
             galaxies[i, 3:6] = np.array([0.5, 0.5, 0.5], dtype=np.float32) * brightness  # Gray
-        elif i % 4 == 2:
-            galaxies[i, 3:6] = np.array([1, 0.0, 0.7], dtype=np.float32) * brightness  # Pink/Purple
-        elif i % 4 == 3:
+        elif i % 10 == 2:
+            galaxies[i, 3:6] = np.array([0.98, 0.0, 0.603], dtype=np.float32) * brightness  # Pink
+        else:
             galaxies[i, 3:6] = np.array([0.54, 0.81, 0.94], dtype=np.float32) * brightness  # Baby blue
 
     return galaxies
+
 
 
 
